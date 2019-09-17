@@ -42,7 +42,7 @@ class Login extends React.Component {
                     value={this.state.credentials.password}
                     onChange={this.handleChange}
                     />
-                    <button className= "log">Log In</button>
+                    <button className= "log"><i className="fa fa-spinner fa-spin"></i>Log In</button>
                 </form>
             </div>
 
