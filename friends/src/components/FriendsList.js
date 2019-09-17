@@ -12,7 +12,7 @@ class FriendsList extends React.Component {
     }
     getData = () => {
         axiosWithAuth()
-        .get('/data')
+        .get('/friend')
         .then(res => {
             this.setState({
                 friendsList: res.data.data.filter(

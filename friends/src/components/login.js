@@ -2,7 +2,7 @@ import React from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 
 class Login extends React.Component {
-    state = {
+    state = {  
         credentials: {
         username: '',
         password: ''
@@ -22,7 +22,7 @@ class Login extends React.Component {
         .post('/login', this.state.credentials)
         .then(res => {
             localStorage.setItem('token', res.data.payload);
-            this.props.history.push('/protected');
+            this.state.history.push('/protected');
         })
         .catch(err => console.log(err));
     };
