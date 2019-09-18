@@ -5,24 +5,16 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Login from './components/login';
 import PrivateRoute from './components/PrivateRoute';
 import FriendsList from './components/FriendsList';
-import
+import AddFriend from './components/AddFriend';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/protected">Protected Page</Link>
-        </li>
-      </ul>
-      <Switch>
-        <PrivateRoute exact path="/protected" component={FriendsList} />
-        <Route path='/login' component={Login} />
-        <Route component={Login} />
-      </Switch>
+      <NavBar />
+      <Route exact path='/login' component={login} />
+      <PrivateRoute path='/friendlist' component={AddFriend}/>
+      <PrivateRoute path='/friendlist' component={FriendList}/>
     </div>
   );
 }
