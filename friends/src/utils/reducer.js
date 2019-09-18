@@ -1,5 +1,5 @@
 import {FRIEND_FAILURE, FRIEND_START, FRIEND_SUCCESS, POST_START, POST_FAILURE, POST_SUCCESS, DELETE_START, DELETE_SUCCESS, DELETE_FAILURE} from './actions';
-import { start } from 'repl';
+
 
 const initialState = {
     friends: [],
@@ -11,7 +11,7 @@ export const reducer = ( state = initialState, action) => {
     switch (action.type) {
         case FRIEND_START:
             return{
-                ...start,
+                ...state,
                 isFetching: true,
                 error: ''
             
