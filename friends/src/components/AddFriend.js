@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {postFriend} from '../utils/actions';
+import {postFriends} from '../utils/actions';
 
-const AddFriend = ({postFriend}) => {
+const AddFriend = ({postFriends}) => {
     const [addName, setAddName] = useState('');
     const [addAge, setAddAge] = useState('');
     const [addEmail, setAddEmail] = useState('');
@@ -13,7 +13,7 @@ const AddFriend = ({postFriend}) => {
             age: addAge,
             email: addEmail
         };
-        postFriend(addFriend);
+        postFriends(addFriend);
     };
     return(
         <form onSubmit={addFriend}>
@@ -44,6 +44,7 @@ const AddFriend = ({postFriend}) => {
                 setAddEmail(e.target.value);
             }}
             />
+            <button type="submit">Submit</button>
         </form>
     );
 }
@@ -57,5 +58,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-    mapStateToProps,{postFriend}
+    mapStateToProps,{postFriends}
 )(AddFriend);

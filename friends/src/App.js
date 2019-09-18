@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path='/login' component={Login} />
-      <PrivateRoute path='/addfriend' component={AddFriend}/>
+      <PrivateRoute path='/friendslist' component={AddFriend}/>
       <PrivateRoute path='/friendslist' component={FriendsList}/>
     </div>
   );
