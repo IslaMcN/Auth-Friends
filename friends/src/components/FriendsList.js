@@ -1,56 +1,32 @@
-import React from 'react';
-import moment from 'moment';
-import Loader from 'react-loader-spinner';
-import {axiosWithAuth} from '../utils/axiosWithAuth';
+import React, { useEffect } from 'react';
+import {connect} from 'react-redux';
+import {getFriend} from './utils/actions';
+i
+import Friend  from './Friend'
 
-class FriendsList extends React.Component {
-    state = {
-        friendsList: []
-    };
-    componentDidMount() {
-        this.getData();
-    }
-    getData = () => {
-        axiosWithAuth()
-        .get('/friends')
-        .then(res => {
-            console.log(res.data)
-            this.setState({
-                friendsList: res.data.map(list => {
-                    return list.name === "Dustin"
-                })
-            });
-        })
-        .catch(err => console.log(err));
-    };
-    formatData = () => {
-        const formattedData = [];
-        console.log(this.state.friendsList);
-        friendsList.map((list) => {
-            if (list.friend === 'Friend') {
-                formattedData.push({
-                    id: Date.now(),
-                    
-                });
-            }
-        });
-        return formattedData;
-    };
-    render() {
-        const friendsList = this.formatData();
-        
-        return(
-                friendsList.map(list => {
-                    return(
-                <>
-                <h1>Friends</h1>
-                <h2>{list.name}</h2>
-                <h3>{list.age}</h3>
-                <h4>{list.email}</h4>
-                </>
-                  )}) 
-        )
-    }
+const FriendList = ({getFriend, friends}) => {
+    useEffect(() => {
+        getFriend();
+    }, [getFriend]);
+    return(
+       <>
+        <h3>Friends List</h3>
+        <div>
+            {friends.map(friend => {
+                return <Friend key={friend.id} friend={friend}/>;
+            })}
+        </div>
+        </>
+    );
 }
-
-export default FriendsList;
+const mapStateToProps = state => {
+    return {
+        friends: state.friends,
+        isFetching:state.isFetching,
+        error: state.error
+    };
+};
+export default connect(
+    mapStateToProps, 
+    {getFriend}
+)(FriendList);
