@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Login from './components/login';
 import PrivateRoute from './components/PrivateRoute';
 import FriendsList from './components/FriendsList';
-import AddFriend from './components/AddFriend';
+
 import NavBar from './components/NavBar';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path='/login' component={Login} />
-      <PrivateRoute path='/friendlist' component={AddFriend}/>
+      
       <PrivateRoute path='/friendlist' component={FriendsList}/>
     </div>
   );
