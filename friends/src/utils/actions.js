@@ -15,7 +15,7 @@ export const getFriend = () => {
             dispatch({type:FRIENDS_FAILURE, payload:err});
         });
     };
-
+};
     export const POST_START = "POST_START";
     export const POST_SUCCESS = 'POST_SUCCESS';
     export const POST_FAILURE = 'POST_FAILURE';
@@ -60,4 +60,3 @@ export const getFriend = () => {
             dispatch({type:UPDATE_FAILURE, payload:err});
         });
     };
-}

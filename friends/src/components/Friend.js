@@ -13,7 +13,7 @@ const Friend = ({friend, deleteFriends, updateFriends}) => {
             age: updateAge,
             email: updateEmail
         };
-        updateFriend(updatedFriend.id);
+        updateFriend(updateFriends.id);
 
     };
     const handleDelete = e => {
