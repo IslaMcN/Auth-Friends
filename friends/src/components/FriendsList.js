@@ -12,14 +12,13 @@ class FriendsList extends React.Component {
     }
     getData = () => {
         axiosWithAuth()
-        .get('/friend')
+        .get('/friends')
         .then(res => {
+            console.log(res.data)
             this.setState({
-                friendsList: res.data.data.filter(
-                    list => 
-                    list.type === 'Friends' && 
-                    (list.friend === 'Friend' || list.friend === "Not Friend")
-                )
+                friendsList: res.data.map(list => {
+                    return list.name === "Dustin"
+                })
             });
         })
         .catch(err => console.log(err));
@@ -27,10 +26,11 @@ class FriendsList extends React.Component {
     formatData = () => {
         const formattedData = [];
         console.log(this.state.friendsList);
-        this.state.friendsList.forEach((list) => {
+        friendsList.map((list) => {
             if (list.friend === 'Friend') {
                 formattedData.push({
-                    date:moment(list.date).format('MMM'),
+                    id: Date.now(),
+                    
                 });
             }
         });
@@ -38,9 +38,17 @@ class FriendsList extends React.Component {
     };
     render() {
         const friendsList = this.formatData();
-        console.log(friendsList);
+        
         return(
-            <div>Info</div>
+                friendsList.map(list => {
+                    return(
+                <>
+                <h1>Friends</h1>
+                <h2>{list.name}</h2>
+                <h3>{list.age}</h3>
+                <h4>{list.email}</h4>
+                </>
+                  )}) 
         )
     }
 }

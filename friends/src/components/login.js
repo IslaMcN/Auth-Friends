@@ -22,7 +22,7 @@ class Login extends React.Component {
         .post('/login', this.state.credentials)
         .then(res => {
             localStorage.setItem('token', res.data.payload);
-            this.state.history.push('/protected');
+            this.props.history.push('/protected');
         })
         .catch(err => console.log(err));
     };
