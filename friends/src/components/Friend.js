@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {deleteFriends, updateFriends} from '../utils/actions';
+import {deleteFriends, updateFriend} from '../utils/actions';
 
-const Friend = ({friend, deleteFriends, updateFriends}) => {
+const Friend = ({friend, deleteFriends, updateFriend}) => {
     const [updateName, setUpdatedName] = useState('');
     const [updateAge, setUpdatedAge] = useState('');
     const [updateEmail, setUpdateEmail] = useState('');
@@ -13,7 +13,7 @@ const Friend = ({friend, deleteFriends, updateFriends}) => {
             age: updateAge,
             email: updateEmail
         };
-        updateFriend(updateFriends.id);
+        updateFriend(updateFriend.id);
 
     };
     const handleDelete = e => {
