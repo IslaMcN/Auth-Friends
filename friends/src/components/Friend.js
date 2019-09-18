@@ -32,5 +32,5 @@ const Friend = ({friend, deleteFriends, updateFriend}) => {
 }
 export default connect(
     null,
-    {deleteFriends, updateFriends}
+    {deleteFriends, updateFriend}
 )(Friend);

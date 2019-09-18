@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import {getFriend} from './utils/actions';
-i
+
 import Friend  from './Friend'
 
 const FriendList = ({getFriend, friends}) => {
