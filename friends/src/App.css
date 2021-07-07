@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.log{
+  
+       background: #534856;
+       background-image: -webkit-linear-gradient(top, #534856, #EA2768);
+       background-image: -moz-linear-gradient(top, #534856, #EA2768);
+       background-image: -ms-linear-gradient(top, #534856, #EA2768);
+       background-image: -o-linear-gradient(top, #534856, #EA2768);
+       background-image: linear-gradient(to bottom, #534856, #EA2768);
+       -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+       border-radius: 20px;
+       color: #EA2768;
+       font-family: Arial;
+       font-size: 40px;
+       font-weight: 100;
+       padding: 40px;
+       box-shadow: 1px 1px 20px 0px #FFDA32;
+       -webkit-box-shadow: 1px 1px 20px 0px #FFDA32;
+       -moz-box-shadow: 1px 1px 20px 0px #FFDA32;
+       text-shadow: 1px 1px 20px #5A4D88;
+       border: solid #4174B3 1px;
+       text-decoration: none;
+       display: inline-block;
+       cursor: pointer;
+    
+    
+    
+    
+}
+.log:hover {
+     background: #5A4D88;
+     background-image: -webkit-linear-gradient(top, #5A4D88, #FFDA32);
+     background-image: -moz-linear-gradient(top, #5A4D88, #FFDA32);
+     background-image: -ms-linear-gradient(top, #5A4D88, #FFDA32);
+     background-image: -o-linear-gradient(top, #5A4D88, #FFDA32);
+     background-image: linear-gradient(to bottom, #5A4D88, #FFDA32);
+     text-decoration: none;
+}
